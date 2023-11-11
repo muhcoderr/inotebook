@@ -3,9 +3,10 @@ const router = express.Router();
 const User = require("../models/User");
 const { body, validationResult } = require("express-validator"); //data validation using express validator
 
-// Create a User using : POST "/api/auth/". Doesn't require Auth
+// Create a User using: POST "/api/auth/createuser". No login required
+
 router.post(
-  "/",
+  "/createuser",
   [
     body("name", "Enter a valid name").isLength({ min: 4 }),
     body("email", "Enter a valid email").isEmail(),
@@ -13,16 +14,13 @@ router.post(
       min: 5,
     }),
   ],
-  (req, res) => {
-    // console.log(req.body);
-    // const user = User(req.body);
-    // user.save();
+  async (req, res) => {
+      // If there are errors, return Bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    // res.send(req.body);
-
+    
     User.create({
       name: req.body.name,
       password: req.body.password,
