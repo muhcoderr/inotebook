@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from 'react';
+import Notes from '../Notes/Notes';
 const Home = () => {
   return (
     <div>
-        My Princesses this is Home Page
+        <Notes/>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import NoteState from "./context/notes/NoteState";
 function App() {
   return (
     <div className="App">
+     <NoteState>
         <Router>
           <Navbar />
           <Routes>
@@ -15,6 +16,8 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </Router>
+     </NoteState>
+     
     </div>
   );
 }
