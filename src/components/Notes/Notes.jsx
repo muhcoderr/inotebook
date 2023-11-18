@@ -9,7 +9,8 @@ const Notes = () => {
   // const [notes, setNotes] = context;
   const {notes, setNotes} = context;
   return (
-    <div className='row mt-4 mx-4'>
+    <>
+     <div className='row mt-4 mx-4'>
       <h2>You Notes</h2>
       {/* {notes.map((note) => {
         return <Noteitem key={note._id} note={note}/>
@@ -22,6 +23,7 @@ const Notes = () => {
         <p>No notes available</p>
       )}
     </div>
+    </>
   )
 }
 
