@@ -9,9 +9,9 @@ const AddNote = () => {
     const {addNote} = context;
     
     const [note, setNote] = useState({
-        title:"",
-        description:"",
-        tag:""
+        title: "",
+        description: "",
+        tag: ""
     })
 
     const handleClick = (e)=> {
